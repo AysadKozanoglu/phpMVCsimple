@@ -19,7 +19,7 @@
     <?php require_once('routes.php'); ?>
 
     <footer>
-      hlspanel 2016
+      simpleMVC 2016 by Aysad Kozanoglu
     </footer>
   <body>
 <html>
