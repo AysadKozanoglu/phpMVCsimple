@@ -22,6 +22,71 @@ config.php
 routes.php
 ```
 
+## index.php ##
+
+<?php
+  require_once('errorhandling.php');
+  require_once('config.php');
+  require_once('class/dbconn.php');
+
+ 
+$DB = new DBPDO();
+
+  if (isset($_GET['controller']) && isset($_GET['action'])) {
+    $controller = $_GET['controller'];
+    $action     = $_GET['action'];
+  } else {
+    $controller = 'pages';
+    $action     = 'home';
+  }
+
+  require_once('views/layout.php');
+?>
+
+## routes.php ##
+<?php
+  function call($controller, $action) {
+    require_once('controllers/' . $controller . '_controller.php');
+    switch($controller) {
+      case 'pages':
+        $controller = new PagesController();
+      break;
+    }
+
+    $controller->{ $action }();
+  }
+
+  $controllers = array('pages' => ['home', 'error']);
+
+  if (array_key_exists($controller, $controllers)) {
+    if (in_array($action, $controllers[$controller])) {
+      call($controller, $action);
+    } else {
+      call('pages', 'error');
+    }
+  } else {
+    call('pages', 'error');
+  }
+?>
+
+## layout.php ## 
+html base skelett and require routes.php on body 
+
+## example controller ##
+<?php
+  class PagesController {
+    public function home() {
+      $first_name = 'Aysad';
+      $last_name  = 'Kozanoglu';
+      require_once('views/pages/home.php');
+    }
+    public function error() {
+      require_once('views/pages/error.php');
+    }
+  }
+?> 
+
+
 ## DB Connection ##
 Örnekler:
 

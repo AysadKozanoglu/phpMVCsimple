@@ -1,5 +1,11 @@
 <?php
+/**
+  
+ coder: Aysad Kozanoglu 
+ email: aysadx@gmail.com
+ web: http://onweb.pe.hu
 
+**/
 class DBPDO {
 
   public $pdo;

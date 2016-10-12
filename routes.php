@@ -1,4 +1,12 @@
 <?php
+/**
+  
+ coder: Aysad Kozanoglu 
+ email: aysadx@gmail.com
+ web: http://onweb.pe.hu
+
+**/
+
   function call($controller, $action) {
     require_once('controllers/' . $controller . '_controller.php');
 
