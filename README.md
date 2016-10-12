@@ -3,8 +3,7 @@
 
 by Aysad Kozanoglu | email: aysadx@gmail.com | web: http://onweb.pe.hu
 
-
-Created for HLS Panel
+this MVC i created to start to develope a HLSPanel for ffmpeg with nginx
 
 ### MVC Overview ###
 ```
