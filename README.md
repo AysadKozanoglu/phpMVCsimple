@@ -23,7 +23,7 @@ routes.php
 ```
 
 ## index.php ##
-
+```
 <?php
   require_once('errorhandling.php');
   require_once('config.php');
@@ -42,8 +42,9 @@ $DB = new DBPDO();
 
   require_once('views/layout.php');
 ?>
-
+```
 ## routes.php ##
+```
 <?php
   function call($controller, $action) {
     require_once('controllers/' . $controller . '_controller.php');
@@ -68,11 +69,12 @@ $DB = new DBPDO();
     call('pages', 'error');
   }
 ?>
-
+```
 ## layout.php ## 
 html base skelett and require routes.php on body 
 
 ## example controller ##
+```
 <?php
   class PagesController {
     public function home() {
@@ -85,11 +87,11 @@ html base skelett and require routes.php on body
     }
   }
 ?> 
-
+```
 
 ## DB Connection ##
 Örnekler:
-
+```
 $DB = new DBPDO();
 
 
@@ -143,15 +145,13 @@ $users = $DB->fetchAll("SELECT * FROM users", null, 'name');
         [id] => 3
         [name] => basan
     )
-// direk kontrol 
-
+// use raw data with if 
 if( isset ( $users[$raw_data['user_name']] ) ) { //Do something }
 
-// Son eklenen id 
+// last added id 
 
 $DB->lastInsertId();
-
-
+```
 #The MIT License (MIT)#
 
 Copyright (c) <2016> <copyright Aysad Kozanoglu>
